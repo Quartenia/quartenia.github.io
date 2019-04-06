@@ -13,11 +13,11 @@ var gl = canvas.getContext('webgl');
     // Lookup the size the browser is displaying the canvas in CSS pixels
     // and compute a size needed to make our drawingbuffer match it in
     // device pixels.
-    var displayWidth  = Math.floor(gl.canvas.clientWidth  * realToCSSPixels);
-    var displayHeight = Math.floor(gl.canvas.clientHeight * realToCSSPixels);
+    //var displayWidth  = Math.floor(gl.canvas.clientWidth  * realToCSSPixels);
+    //var displayHeight = Math.floor(gl.canvas.clientHeight * realToCSSPixels);
 
-    displayWidth = 500;
-    displayHeight = 500;
+    var displayWidth  = Math.floor(window.innerWidth  * realToCSSPixels);
+    var displayHeight = Math.floor(window.innerHeight*(2.0/3.0) * realToCSSPixels);
 
     // Check if the canvas is not the same size.
     if (gl.canvas.width  !== displayWidth ||
@@ -74,10 +74,14 @@ function main() {
 
         void main() {
             vec2 st = gl_FragCoord.xy/u_resolution.xy;
-            st.x *= u_resolution.x/u_resolution.y;
+            
+            float res = (u_resolution.x/u_resolution.y);
+            st.x *= res;
+            vec2 mousePos = u_mousePos;
+            mousePos.x *= res;
  
             vec3 color = vec3(.0);
-        
+            
            
         
             // Tile the space
@@ -88,11 +92,11 @@ function main() {
         
             // Cell positions
             vec2 point[5];
-            point[0] = vec2(0.75,0.75);
-            point[1] = vec2(0.75,0.25);
-            point[2] = vec2(0.25,0.75);
-            point[3] =  vec2(0.25,0.25);
-            point[4] = u_mousePos/u_resolution;
+            point[0] = vec2(0.75*res,0.75);
+            point[1] = vec2(0.75*res,0.25);
+            point[2] = vec2(0.25*res,0.75);
+            point[3] = vec2(0.25*res,0.25);
+            point[4] = mousePos;
         
             float m_dist = 1.;  // minimun distance
             vec2 m_point;        // minimum position
@@ -119,10 +123,10 @@ function main() {
             //color -= abs(sin(40.0*m_dist))*0.07;
         
             // Draw cell center
-            color += 1.-step(.05, m_dist);
+            color += vec3(1.-step(.05, m_dist);
         
             // Draw grid
-            color.r += step(.98, f_st.x) + step(.98, f_st.y);
+            //color.r += step(.98, f_st.x) + step(.98, f_st.y);
         
             //gl_FragColor = vec4(st.xy, 0.0,1.0);
             
@@ -276,14 +280,14 @@ function drawScene(gl, programInfo, buffers, deltaTime) {
 
     // Set the shader uniforms
 
+    console.log("sticazzi: %f %f", gl.canvas.width, gl.canvas.height)
+
     gl.uniform2f(
         programInfo.uniformLocations.resolution,
-        1,
-        canvas.width, canvas.height);
+        gl.canvas.width, gl.canvas.height);
 
     gl.uniform2f(
         programInfo.uniformLocations.mousePos,
-        1,
         mousePos[0], mousePos[1]);
 
     gl.uniform1f(
@@ -392,9 +396,9 @@ function bindMouseEvents(window){
         var mouseP = getMousePos(canvas, evt);
         
 
-        mousePos[0] =mouseP.x;
-        mousePos[1] =mouseP.y;        
-        console.log("mouse moved %f, %f",mousePos[0]/canvas.width, mousePos[1]/canvas.height );
+        mousePos[0] =mouseP.x/canvas.width;
+        mousePos[1] =mouseP.y/canvas.height;        
+        console.log("mouse moved %f, %f",mousePos[0], mousePos[1] );
     }, false);
 
     
