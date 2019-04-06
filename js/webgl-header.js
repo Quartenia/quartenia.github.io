@@ -10,10 +10,24 @@ var gl = canvas.getContext('webgl');
  // resize the canvas to fill browser window dynamically
  window.addEventListener('resize', resizeCanvas, false);
  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    gl.viewport(0, 0, canvas.width, canvas.height);
-    console.log("resized");
+    // Lookup the size the browser is displaying the canvas in CSS pixels
+    // and compute a size needed to make our drawingbuffer match it in
+    // device pixels.
+    var displayWidth  = Math.floor(gl.canvas.clientWidth  * realToCSSPixels);
+    var displayHeight = Math.floor(gl.canvas.clientHeight * realToCSSPixels);
+
+    displayWidth = 500;
+    displayHeight = 500;
+
+    // Check if the canvas is not the same size.
+    if (gl.canvas.width  !== displayWidth ||
+        gl.canvas.height !== displayHeight) {
+
+      // Make the canvas the same size
+      gl.canvas.width  = displayWidth;
+      gl.canvas.height = displayHeight;
+    }
+    console.log("resized: %f, %f", canvas.width, canvas.height);
 }
 resizeCanvas();
 
@@ -110,8 +124,17 @@ function main() {
             // Draw grid
             color.r += step(.98, f_st.x) + step(.98, f_st.y);
         
-            gl_FragColor = vec4(st.xy, 0.0,1.0);
-            //gl_FragColor = vec4(color,1.0);
+            //gl_FragColor = vec4(st.xy, 0.0,1.0);
+            
+            if (st.y > 0.5)
+            {
+                gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+            }
+            else
+            {
+            gl_FragColor = vec4(0.0, 1.0, 0.0, 1.0);
+            }
+            gl_FragColor = vec4(color,1.0);
         }
         `;
 
@@ -219,6 +242,8 @@ function drawScene(gl, programInfo, buffers, deltaTime) {
     gl.depthFunc(gl.LEQUAL);            // Near things obscure far things
 
     // Clear the canvas before we start drawing on it.
+    gl.viewport(0, 0, gl.canvas.width, gl.canvas.height);
+    
 
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     // Tell WebGL how to pull out the positions from the position
@@ -351,7 +376,7 @@ function distance2D(xA,yA,xB,yB){
 }
 
 //Get Mouse Position
-function getMousePos(window, evt) {
+function getMousePos(canvas, evt) {
     var rect = canvas.getBoundingClientRect();
 
     //console.log('canvas  pos %f, %f',rect.left, rect.top, rect.width, rect.height);
@@ -364,12 +389,12 @@ function getMousePos(window, evt) {
 function bindMouseEvents(window){
         
     window.addEventListener("mousemove", function (evt) {
-        var mouseP = getMousePos(window, evt);
+        var mouseP = getMousePos(canvas, evt);
         
 
         mousePos[0] =mouseP.x;
         mousePos[1] =mouseP.y;        
-        console.log("mouse moved %f, %f",mousePos[0], mousePos[1] );
+        console.log("mouse moved %f, %f",mousePos[0]/canvas.width, mousePos[1]/canvas.height );
     }, false);
 
     
