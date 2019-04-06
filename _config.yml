@@ -1,2 +1,14 @@
-name: LQ
+# Site settings
+title: Luca Quartesan - Procedural/Tool programmer
+email: quarte1994@gmail.com
+description: > # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site
+
+twitter_username: quarte28
+github_username: Quartenia
+
+permalink: /:categories/:title.html
+
+# Build settings
 markdown: kramdown

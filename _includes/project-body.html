@@ -1,0 +1,66 @@
+<section id="project-body">
+        
+    <div class="container-fluid">
+
+           
+        <!-- Title -->
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h1 class="section-heading">{{ page.title }}</h1>
+                <hr class="primary">
+
+            </div>
+        </div>
+
+        <!-- Title End-->
+        <!-- BreakDown-->
+        <div class="col-lg-12">
+            <h2 class="section-heading">Breakdown</h2>
+            <hr class="primary">
+            <!-- Header -->
+            {% for header in page.project-header %}
+
+            <div class="col-lg-3 align-items-center">
+                   
+
+                <div class="proj-header-container">
+                    <div class="col-lg-8 ">
+                        <div class="header-title">{{header.title}}</div>
+                        <div class="header-content">
+                            {% if header.content[1] %}
+                            <ul>
+                                {% for content in header.content %}
+                                <li>{{content}}</li>
+                                {% endfor %}
+                            </ul>
+                            {% else %}
+                            <p>{{header.content}}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="header-icon">
+                            <i class="fa {{header.icon}} fa-2x wow bounceIn" data-wow-delay=".1s"></i>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            {% endfor %}
+            <!-- Header End-->
+
+        </div>
+        <!-- Breakdown End-->
+        <div class="col-lg-12">
+            <h2 class="section-heading">Description</h2>
+            <hr class="primary">
+            <!-- Description -->
+            <p>{{ page.description }}</p>
+
+        </div>
+        <hr class="primary">
+        <!-- Body -->
+        <p>{{ content }}</p>
+    </div>
+</section>
