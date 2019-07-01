@@ -1,86 +1,103 @@
 ---
 title: "Graph Grammars Tool"
-subtitle: Rogue-Lite Top-Down Shooter
-categories:  tools
+subtitle: ImGui and Qt Tool
+categories: projects school
 layout: project
-img: CaptainStarshot/capt.png
+img: GrammarsTool/Header.png
 date: 2018-01-05 17:02:58 +0200
-project-date: Semptember 2018
-col-width: 4
+project-date: February 2018
+col-width: 8
 project-header:
-    -
-        title: Team
-        icon: fa-users
-        content: 
-        - 2 Producers
-        - 5 Programmers
-        - 4 Artists
-        - 11 Designers
     -
         title: Roles
         icon: fa-user-tag
         content: 
-        - PCG Tool and system
-        - Tech Lead (Last 8 weeks)
-        - Graphics
-    -
-        title: Tasks
-        icon: fa-tasks
-        content: 
-        - PCG Tool 
-        - PCG system UE4
-        - Custom Toon shaders
-        - Graphics Optimiation
+        - Tool Programmer
+        - Procedural Programmer
     -
         title: Tools
         icon: fa-toolbox
         content: 
         - UE4
         - QT Creator 4.8
-        - Jira
+        - ImGui 
     -
         title: Languages
         icon: fa-code
         content: 
         - C++
-        - UE4 Blueprints/Materials
+        - UE4 Blueprints
     -
         title: Platforms
         icon: fa-gamepad
         content: 
-        - Steam (Windows only)
+        - Windows
     -
         title: Time
         icon: fa-calendar-alt
         content: 
-        - 32 Weeks
-        - Started September 2018
+        - 8 Weeks 2nd Year
+        - 8 Weeks 3rd Year
     -
         title: Status
         icon: fa-spinner
-        content: Released
+        content: Unreleased
 gallery:
     - 
-        caption: test 
-        img: CaptainStarshot/OnFoot.jpg
+        caption: ImGui Editor 
+        img: GrammarsTool/UWPEdit.png
     - 
-        caption: anubis 
-        img: CaptainStarshot/Space.jpg
+        caption: ImGui Generation Preview 
+        img: GrammarsTool/UWPSim.png
+    - 
+        caption: test 
+        img: GrammarsTool/QtEdit.png
+    - 
+        caption: test 
+        img: GrammarsTool/QtSim.png
 
-description: Captain Starshot is a Rogue-Lite Top-Down Shooter, in a 50s pulp-fiction space, where you control a captain and its crew while exploring space and killing aliens.
+description: This tool is a rule editor for procedural level generation, it has been developed using ImGui and Qt.
 
 ---
-started in year 2 as part of a custom engine for roguelikes for UWP. 
-The system is based on graph grammars.
+This tool has been developed for editing rules for a grammar graph based level generation system. 
 
-First, developed in ImGui in 8 weeks. This version featured ruled creation and s basic implementation of gg.
+<h3>ImGui Version</h3>
+First, the tool was developed in ImGui in 8 weeks during my second year. The tool was part of a UWP(Universal Windows Platform) custom-engine for rogue-like games.
+Unfortunately this project never had the chance of having a game developed with, the following footage is from the tech demo for the end of the project. 
 
-Finally, developed in Qt, which was a great learning experiences as tool programmer. improved on ui/ux, editor and added nested graphs system.
 
-Finally, implemented a tailored system in unreal to convert grammars into levels.
+<div align="center">
+    <video width="75%" controls>
+        <source src="/assets/img/portfolio/GrammarsTool/GGUWP.mp4" type="video/mp4">
+    </video>
+</div>
 
-Features: 
-+ rules editor
-+ 2d graph simulation view
-+ project creation 
-+ nested graphs
+<h4>Features:</h4>
+
++ Rules import/export.
++ Rules Editor.
++ Generation simulation (Preview).
+
+<h3>Qt Version</h3>
+
+During my third year i had the chance of using this system and tool to develop an year long game project (<a href="/projects/school/CaptainStarshot">Captain Stashot</a>).
+The tool was reimplemented in Qt, which was a great learning experiences as tool programmer. Having team members using the tool greatly helped improving on ui/ux, editor and add quality of life features. 
+
+<div align="center">
+    <video width="75%" controls>
+        <source src="/assets/img/portfolio/GrammarsTool/GGtoUE4.mp4" type="video/mp4">
+    </video>
+</div>
+
+<h4>Features:</h4>
+
+
++ Rules import/export.
++ Rules Editor.
++ Generation simulation (Preview).
++ Project creation.
++ Nested graphs.
++ Graph Outliner.
++ and more QoL features.
+
+

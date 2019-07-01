@@ -6,7 +6,7 @@ layout: project
 img: Drivinity/header.png
 date: 2018-05-06 17:02:58 +0200
 project-date: May 2018
-col-width: 10
+col-width: 8
 project-header:
     -
         title: Team

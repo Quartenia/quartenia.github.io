@@ -6,7 +6,7 @@ layout: project
 img: CaptainStarshot/capt.png
 date: 2018-09-05 17:02:58 +0200
 project-date: Semptember 2018
-col-width: 10
+col-width: 12
 project-header:
     -
         title: Team
@@ -78,26 +78,21 @@ Finally, the last part of the project, I worked as tech Lead and learned about p
 <h2 class="section-heading" id="My Contribution">My Contribution</h2>
  <hr class="primary">
 
+<h3>Procedural Generation</h3>
+
+One of my main responsibility during this project was Procedural generation.
+The system used to procedurally generate our levels is based on Graph Grammars.
+During this project, I had the opportunity to port to Qt and further develop a tool I previously created to create and edit rules for this system (<a href="/projects/school/GrammarsTool">More information regarding Graph Grammars tool</a>). 
+Additionally, for the first time a tool I created was used by other developers, which allowed me to improve the tool.
+Finally, I also implemented a tailored system in unreal to convert grammars into levels.
+
 <h3>Graphics</h3>
 
 During this project i had the chance to explore and learn more about UE4 shading pipeline. 
 One of the main tasks was optimization and by working on this I had the chance to use most of the tools provided by unreal to profile and optimize GPU performance.
 Furthermore, I've worked on the shading. It consist in a flat looking toon shader, with procedural brush strokes and outlines. 
 
-<h3>Procedural Generation</h3>
-
-This system and tools started in my second year as part of a custom engine for roguelikes for UWP. 
-The system is based on graph grammars.
-First, the tool was developed in ImGui in 8 weeks during my second year. This version featured rules creation and a basic implementation of graph grammars.
-Secondly, the tool was implemented in Qt during my third year, which was a great learning experiences as tool programmer. It greatly helped improving on ui/ux, editor and added nested graphs system. 
-Finally, with the tool i also implemented a tailored system in unreal to convert grammars into levels.
 
 <div align="center">
-    <video width="75%" controls>
-        <source src="/assets/img/portfolio/CaptainStarshot/Pipeline.mp4" type="video/mp4">
-    </video>
-
-    <p></p>
-
-    <iframe src="https://store.steampowered.com/widget/1037410/" frameborder="0" width="646" height="190"></iframe>
+   <iframe src="https://store.steampowered.com/widget/1037410/" frameborder="0" width="646" height="190"></iframe>
 </div>
