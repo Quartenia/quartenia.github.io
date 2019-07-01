@@ -52,6 +52,23 @@ h1,h2,h3,h4 {
 
 p {
     text-align: center;
+    a {
+        &:link {
+            color: grey;
+            text-decoration: underline;
+        }
+        &:hover{
+            color: red;
+        }
+        &:visited {
+            color: $theme-text-primary;
+            text-decoration: none;
+        }
+        &:active{
+            color: green;
+        }
+    }
+    
 }
 
 hr {
@@ -61,21 +78,17 @@ hr {
 }
 
 a {
+    @include transition-all;
+    color: $theme-dark;
     &:link {
-        color: grey;
-        text-decoration: underline;
-    }
-    &:hover{
-        color: red;
-    }
-    &:visited {
-        color: $theme-text-primary;
         text-decoration: none;
     }
-    &:active{
-        color: green;
+    &:hover,
+    &:focus {
+        color: $theme-text-primary;
     }
 }
+
 
 .no-gutters {
     margin-right: 0;
