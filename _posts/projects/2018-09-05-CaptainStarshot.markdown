@@ -93,7 +93,7 @@ Secondly, the tool was implemented in Qt during my third year, which was a great
 Finally, with the tool i also implemented a tailored system in unreal to convert grammars into levels.
 
 <div align="center">
-    <video controls>
+    <video width="75%" controls>
         <source src="/assets/img/portfolio/CaptainStarshot/Pipeline.mp4" type="video/mp4">
     </video>
 
