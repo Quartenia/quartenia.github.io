@@ -1,0 +1,315 @@
+html,
+body{
+    background:  $theme-primary !important;
+    -webkit-tap-highlight-color: $theme-primary;
+    color: $theme-text-primary;
+}
+
+section {
+    background:  $theme-primary !important;
+    -webkit-tap-highlight-color: $theme-primary;
+}
+
+
+
+
+
+header {
+    position: relative;
+    width: 100%;
+
+    text-align: center;
+    color: $theme-text-primary;
+    .header-content {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        .header-content-inner {
+            h1 {
+                font-weight: 700;
+                position: relative;
+                text-transform: uppercase;
+                margin-bottom: 0;
+            }
+            hr {
+                margin: 30px auto;
+                color: $theme-text-primary;
+            }
+            p {
+                font-weight: 600;
+                color: $theme-text-primary;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+    
+}
+
+h1,h2,h3,h4 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+hr {
+    border-color: $theme-dark;
+    border-width: 3px;
+    max-width: 50px;
+}
+
+a {
+    @include transition-all;
+    color: $theme-dark;
+    &:link {
+        text-decoration: none;
+    }
+    &:hover,
+    &:focus {
+        color: $theme-text-primary;
+    }
+}
+
+.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+    
+    > .col,
+    > [class*="col-"] {
+      padding-right: 0;
+      padding-left: 0;
+    }
+}
+
+// Sections
+
+.padded-skills{
+    padding: 12px 12px;
+}
+
+.section-heading {
+    margin-top: 0;
+    text-align: center;
+}
+
+.no-padding{
+    padding: 0px 0px;
+}
+
+.webgl-header{
+    z-index: 0;
+    position: absolute;
+}
+
+.nav-header{
+    color: $theme-text-dark;
+}
+
+
+.nav-portfolio{
+    position: absolute;
+    color: $theme-text-dark;
+}
+
+html:not([data-scroll='0']) {
+    
+    .nav-portfolio {
+        position: fixed;
+       
+        
+    }
+    
+}
+
+
+.project-header{
+    position: absolute;
+    text-align: center;
+    vertical-align: middle;
+    left: 25%;
+    top:25%;
+    width: 50%;
+    height: 50%;
+    color:white;
+    font-weight: 700;
+    
+}
+
+.project-header-bg{
+    background: $theme-dark;
+}
+
+.portfolio-box {
+    position: relative;
+    display: block;
+    max-width: 650px;
+    min-height: 350px;
+    margin: 0 auto;
+    border-radius: 24px;
+    box-shadow: $theme-box-shadow;
+    .portfolio-box-title {
+        background: rgba( $theme-dark, .9 );
+        color: $theme-text-dark;
+        display: block;
+        text-align: center;
+        position: absolute;
+        
+        @include sans-serif-font;
+        padding: 5px 15px;
+        font-size: 24px;
+        border-radius: 24px;
+        
+    }
+
+    .portfolio-box-caption {
+        border-radius: 20px 20px 0px 0px;
+        color: $theme-text-dark;
+        opacity: 0;
+        display: block;
+        background: rgba( $theme-dark, .6 );
+        position: relative;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+        
+        @include transition-all;
+        .portfolio-box-caption-content {
+            
+            text-align: center;
+            position: relative;
+            
+            .project-category,
+            .project-name {
+                padding: 0 15px;
+            }
+            .project-category {
+                text-transform: uppercase;
+                font-weight: 600;
+                font-size: 14px;
+            }
+            .project-name {
+                font-size: 24px;
+            }
+        }
+    }
+    &:hover,
+    &:focus {
+        .portfolio-box-caption {
+            opacity: 1;
+        }
+        .portfolio-box-title{
+            opacity: 0;
+        }
+    }
+    @media (min-width: 768px) {
+        .portfolio-box-caption {
+            .portfolio-box-caption-content {
+                .project-category {
+                    font-size: 16px;
+                }
+                .project-name {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+}
+
+
+//skills
+.skill-box{
+
+    .skill-container{
+        
+        background:  $theme-primary;
+        
+        color: $theme-text-primary;
+        
+        text-align: center;
+        padding: 12px 12px;
+        border-radius: 24px;
+        box-shadow: $theme-box-shadow;
+        border-color:  $theme-dark;
+        .header-title {
+            font-size: 24px;
+            padding: 0px 12px;
+        }
+        .header-content {
+            @include transition-all;
+            margin: 15px;
+            font-size: 12px;
+            opacity: 0;
+            position: absolute;
+            text-align: center;
+            align-self: center;
+            
+        }
+        .header-icon {
+            
+            padding: 0px 0px 0px 12px;
+            opacity: 1;
+            position: relative;
+        }
+
+
+    }
+    
+}
+
+.btn-primary {
+    @include button-variant($theme-text-dark, $theme-dark, $theme-dark);
+}
+
+.btn {
+    @include sans-serif-font;
+    border: none;
+    border-radius: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-xl {
+    padding: 15px 30px;
+}
+
+.project-box{
+    width:85%;
+}
+.skills-box{
+    width:85%;
+}
+
+//projects pages
+.proj-header-container{
+    font-weight: 600;
+    background: $theme-primary;  
+    border-radius: 24px;
+    border-color: $theme-dark;
+    color: $theme-text-primary;
+    text-align: left;
+   
+    box-shadow: $theme-box-shadow;
+    @include sans-serif-font;
+    padding: 12px 12px;
+    width: 100%;
+    height: 144px;
+    vertical-align: text-top;
+    .header-title {
+        @include sans-serif-font;
+        font-size: 18px;
+        padding: 0px 12px;
+    }
+    .header-content {
+        @include sans-serif-font;
+        font-size: 12px;
+        padding: 0px 12px;
+    }
+    .header-icon {
+        @include sans-serif-font;
+        padding: 0px 0px 0px 12px;
+        text-align: right;
+    }
+        
+}

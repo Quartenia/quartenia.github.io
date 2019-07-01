@@ -1,0 +1,73 @@
+
+  <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    
+  <a class="navbar-brand" href="/">Luca Quartesan</a> 
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        
+      <li class="nav-item ">
+        <a class="nav-link" href="#project-body">{{page.title}} </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#breakdown">Breakdown</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#about">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contact">Contact</a>
+      </li>
+      
+    </ul>
+    
+  </div>
+</nav>
+
+
+<div id="carouselExampleIndicators"  class="carousel slide " data-ride="carousel">
+        
+        
+  <div class="carousel-inner">
+          
+      {% for elem in page.gallery %}
+          {% if elem == page.gallery[0] %} 
+          
+          <div class="carousel-item active project-header-bg">
+                  <img class="d-block w-100" style="opacity: 0.7;" src="/assets/img/portfolio/{{elem.img}}">
+              </div>
+              
+          {% else %}
+          <div class="carousel-item project-header-bg">
+                  <img class="d-block w-100" style="opacity: 0.7;" src="/assets/img/portfolio/{{elem.img}}">
+              </div>
+          {% endif %}
+          
+      {% endfor %}
+      <div class="project-header ">
+          <!-- Title -->
+          <h1 class="section-heading">{{ page.title }}</h1>
+          <hr class="primary">
+          <!-- Description -->
+      <p>{{ page.description }}</p>
+          </div>
+  </div>
+  
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
+
+</div>

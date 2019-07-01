@@ -1,66 +1,69 @@
 <section id="project-body">
         
-    <div class="container-fluid">
-
+  
+    
+    <div class="container project-box" >
+        
            
-        <!-- Title -->
+        <p></p>
+        <!-- BreakDown-->
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h1 class="section-heading">{{ page.title }}</h1>
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading" id="breakdown">Breakdown</h2>
                 <hr class="primary">
-
             </div>
         </div>
-
-        <!-- Title End-->
-        <!-- BreakDown-->
-        <div class="col-lg-12">
-            <h2 class="section-heading">Breakdown</h2>
-            <hr class="primary">
-            <!-- Header -->
+     
+        <div class="row ">
+                
             {% for header in page.project-header %}
-
-            <div class="col-lg-3 align-items-center">
+                <div class="col-xl-3 col-lg-6 col-sm-6 align-self-center">
                    
 
-                <div class="proj-header-container">
-                    <div class="col-lg-8 ">
-                        <div class="header-title">{{header.title}}</div>
-                        <div class="header-content">
-                            {% if header.content[1] %}
-                            <ul>
-                                {% for content in header.content %}
-                                <li>{{content}}</li>
-                                {% endfor %}
-                            </ul>
-                            {% else %}
-                            <p>{{header.content}}</p>
-                            {% endif %}
+                    <div class="proj-header-container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="header-title">{{header.title}}</div>
+
+                            </div>
+                            <div class="col text-center">
+                                <div class="header-icon">
+                                    <i class="fa {{header.icon}} fa-lg wow bounceIn" data-wow-delay=".1s"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="header-content">
+                               
+                                <ul>
+                                    {% for content in header.content %}
+                                    <li>{{content}}</li>
+                                    {% endfor %}
+                                </ul>
+                                
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 text-center">
-                        <div class="header-icon">
-                            <i class="fa {{header.icon}} fa-2x wow bounceIn" data-wow-delay=".1s"></i>
-                        </div>
-                    </div>
+                    
+    
+                    <p></p>
                 </div>
-
-
-            </div>
-            {% endfor %}
-            <!-- Header End-->
-
+                
+                {% endfor %}
+                <!-- Header End-->
+            
         </div>
-        <!-- Breakdown End-->
-        <div class="col-lg-12">
-            <h2 class="section-heading">Description</h2>
-            <hr class="primary">
-            <!-- Description -->
-            <p>{{ page.description }}</p>
-
+        <div class="col-md-12 text-">
+                <h2 class="section-heading" id="about">About</h2>
+                <hr class="primary">
+                
         </div>
-        <hr class="primary">
-        <!-- Body -->
-        <p>{{ content }}</p>
+        
+        <div class="col-md-12">
+            <!-- Body -->
+            
+            <p>{{ content }}</p>
+    </div>
+        
     </div>
 </section>
