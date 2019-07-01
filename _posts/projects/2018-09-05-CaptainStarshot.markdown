@@ -92,11 +92,12 @@ First, the tool was developed in ImGui in 8 weeks during my second year. This ve
 Secondly, the tool was implemented in Qt during my third year, which was a great learning experiences as tool programmer. It greatly helped improving on ui/ux, editor and added nested graphs system. 
 Finally, with the tool i also implemented a tailored system in unreal to convert grammars into levels.
 
+<div align="center">
+    <video controls>
+        <source src="/assets/img/portfolio/CaptainStarshot/Pipeline.mp4" type="video/mp4">
+    </video>
 
-<video width="320" height="240" controls>
-  <source src="/assets/img/portfolio/CaptainStarshot/Pipeline.mp4" type="video/mp4">
-</video>
+    <p></p>
 
-<p></p>
-
-<iframe src="https://store.steampowered.com/widget/1037410/" frameborder="0" width="646" height="190"></iframe>
+    <iframe src="https://store.steampowered.com/widget/1037410/" frameborder="0" width="646" height="190"></iframe>
+</div>
