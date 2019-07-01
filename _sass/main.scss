@@ -61,14 +61,19 @@ hr {
 }
 
 a {
-    @include transition-all;
-    color: $theme-dark;
     &:link {
+        color: grey;
+        text-decoration: underline;
+    }
+    &:hover{
+        color: red;
+    }
+    &:visited {
+        color: $theme-text-primary;
         text-decoration: none;
     }
-    &:hover,
-    &:focus {
-        color: $theme-text-primary;
+    &:active{
+        color: green;
     }
 }
 
