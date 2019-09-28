@@ -11,13 +11,16 @@ section {
 }
 
 
-
+.logo {
+    height: 64px;
+    width: 64px;
+}
 
 
 header {
     position: relative;
     width: 100%;
-
+    padding-top: 65px; 
     text-align: center;
     color: $theme-text-primary;
     .header-content {
@@ -118,7 +121,11 @@ a {
 
 .webgl-header{
     z-index: 0;
-    position: absolute;
+    
+}
+
+.navbar{
+    padding: .1rem 1rem;
 }
 
 .nav-header{
