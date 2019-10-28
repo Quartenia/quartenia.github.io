@@ -1,35 +1,39 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white">
-  <a href="/">
-    <div id="sketch-holder" class="logo">
-      <!-- Our sketch will go here! -->
-    </div>
-  </a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-white">
+    <a href="/">
+        <div id="sketch-holder" class="logo">
+            <!-- Our sketch will go here! -->
+        </div>
+    </a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
 
-      <li class="nav-item ">
-        <a class="nav-link" href="#webglHeader">Top </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#projects">Projects</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#skills">Skills</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#about">About Me</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
-      </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#webglHeader">Top </a>
+            </li>
+            <li class="dropdown ">
+                <a class="dropdown-toggle nav-link" data-toggle="dropdown" role="button" href="#">Projects</a>
+                <ul class="dropdown-menu">
+                    {% for post in site.categories.projects %}
+                    <li><a href="{{post.url}}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#about">About Me</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+            </li>
 
-    </ul>
+        </ul>
 
-  </div>
+    </div>
 </nav>
